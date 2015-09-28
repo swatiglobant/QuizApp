@@ -1,0 +1,45 @@
+{
+  "quiz":
+  [
+    {"question": "Is AngularJS code unit testable?",
+      "options": [{"id":"1", "name":"True"},
+                  {"id":"2", "name":"False"}],
+      "answer": {"id":"1"},
+      "isAnswered":"false"
+    },
+    {"question": "Which components can be injected as a dependency in AngularJS?",
+      "options": [{"id":"1", "name":"Application Module"},
+                  {"id":"2", "name":"constant"},
+                  {"id":"3", "name":"value"},
+                  {"id":"4", "name":"factory"}],
+      "answer": {"id":"1"},
+      "isAnswered":"false"
+    },
+    {"question": "AngularJS application expressions are pure JavaScript expressions.",
+      "options": [{"id":"1", "name":"True"},
+                  {"id":"2", "name":"False"}],
+      "answer": {"id":"1"},
+      "isAnswered":"false"
+    },
+    {"question": "Which of the following is true about $error?",
+      "options": [{"id":"1", "name":"$error states that form has invalid data"},
+                  {"id":"2", "name":"$error states the exact error."},
+                  {"id":"2", "name":"Both of the above"},
+                  {"id":"2", "name":"None of the above"}],
+      "answer": {"id":"2"},
+      "isAnswered":"false"
+    },
+    {"question": "config phase is the phase during which AngularJS bootstraps itself.",
+      "options": [{"id":"1", "name":"True"},
+                  {"id":"2", "name":"False"}],
+      "answer": {"id":"1"},
+      "isAnswered":"false"
+    },
+    {"question": "Scope act as glue between controller and view.",
+      "options": [{"id":"1", "name":"True"},
+                  {"id":"2", "name":"False"}],
+      "answer": {"id":"1"},
+      "isAnswered":"false"
+    }
+  ]
+}

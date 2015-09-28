@@ -1,0 +1,23 @@
+<div class="container">
+
+  <div>
+    <acme-navbar />
+  </div>
+  <p class="lead">
+    Welcome to Quiz !!
+  </p>
+  <div class="">
+    <p><label> Enter Name: </label>
+    <input type="text" name="name" ng-model="user.name"></p>
+    <button type="button" name="button" class="btn" ng-click="start()">Start Test</button>
+  </div>
+  <div class="container" ng-show="startTest">
+      <div class="container"  ng-repeat="ques in quizData">
+          <h4>{{curQuestion = $index+1}}. {{ques.question}}</h4>
+          <div class="list-group">
+            <a ng-click="answer(opt.id, curQuestion)" ng-repeat="opt in ques.options" class="list-group-item">{{opt.id}}. {{opt.name}}</a>
+          </div>
+      </div>
+      <button ng-click="calcResult()" class="btn btn-primary" type="button" name="button">Show Result</button>
+  </div>
+</div>
