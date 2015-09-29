@@ -3,15 +3,15 @@
 
   angular
     .module('quizAngular')
-    .controller('LoginController', LoginController);
+    .controller('LoginController', ['$scope', '$state', '$location', 'QuizUsers', function ($scope, $state, $location, QuizUsers) {
 
-  /** @ngInject */
-  function LoginController($scope, $state, $location) {
-    $scope.getUsers = function () {
-      return JSON.parse(localStorage.users);
-    }
-    $scope.users = $scope.getUsers();
-    $scope.login = function () {
+    $scope.login = login;
+
+    function login()
+    {
+      //$scope.users = _getUsers();
+      $scope.users = QuizUsers.getUsers();
+      console.log($scope.users);
       if($scope.username =='admin' && $scope.password == 'admin')
       {
         $state.go('admin');
@@ -31,6 +31,7 @@
         if(flag == false)
           alert('Wrong Credentials!!');
       }
-    };
-  }
+    }
+
+  }]);
 })();

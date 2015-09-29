@@ -3,11 +3,8 @@
 
   angular
     .module('quizAngular')
-    .controller('AdminQuizController', AdminQuizController);
-
-  /** @ngInject */
-  function AdminQuizController($scope) {
-    $scope.empList = JSON.parse(localStorage.users);
-    $scope.result = JSON.parse(localStorage.results);
-  }
+    .controller('AdminQuizController', ['$scope', 'QuizUsers', 'QuizResults', function ($scope, QuizUsers, QuizResults) {
+      $scope.empList = QuizUsers.getUsers();
+      $scope.result = QuizResults.getResult();
+    }]);
 })();
