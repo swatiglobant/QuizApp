@@ -9,15 +9,26 @@
   <div class="">
     <p><label> Enter Name: </label>
     <input type="text" name="name" ng-model="user.name"></p>
-    <button type="button" name="button" class="btn" ng-click="start()">Start Test</button>
+    <p> <button type="button" name="button" class="btn" ng-show="!startTest" ng-click="start()">Start Test</button></p>
   </div>
+
   <div class="container" ng-show="startTest">
-      <div class="container"  ng-repeat="ques in quizData">
-          <h4>{{curQuestion = $index+1}}. {{ques.question}}</h4>
-          <div class="list-group">
-            <a ng-click="answer(opt.id, curQuestion)" ng-repeat="opt in ques.options" class="list-group-item">{{opt.id}}. {{opt.name}}</a>
-          </div>
+    <!-- <label class="label label-warning"> Time remaining to answer is {{quesTime}} seconds..</label> -->
+    <alert type="danger">Time remaining to answer is {{quesTime}} seconds..</alert>
+    <div ng-repeat="ques in quizData">
+      <div class="thumbnail" ng-if="list.count == $index">
+        <h4>{{$index+1}}. {{ques.question}} </h4>
+        <label class="radio" ng-repeat="choice in ques.options">
+          <input type="radio" name="choice" value="{{choice.id}}" ng-click="answer(choice.id, ques)" ng-model="selected">
+          {{choice.id}}. {{choice.name}}
+        </label>
+        <br><button class="btn btn-primary" type="button" ng-click = "submitAns(ques)"> Submit Answer</button>
+        <button class="btn btn-primary" type="button" ng-disabled="list.count+1==maxQues" ng-click="nextQues()"> Next </button><br>
       </div>
-      <button ng-click="calcResult()" class="btn btn-primary" type="button" name="button">Show Result</button>
+    </div>
+    <div class="text-center" ng-if="list.count+1==maxQues">
+      <button ng-click="calcResult()" class="btn btn-primary" type="button" name="button">End Quiz</button>
+      <button ng-click="cancel()" class="btn btn-primary" type="button">Cancel</button>
+    </div>
   </div>
 </div>

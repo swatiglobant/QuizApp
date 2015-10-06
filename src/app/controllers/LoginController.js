@@ -11,7 +11,7 @@
     {
       //$scope.users = _getUsers();
       $scope.users = QuizUsers.getUsers();
-      console.log($scope.users);
+      //console.log($scope.users);
       if($scope.username =='admin' && $scope.password == 'admin')
       {
         $state.go('admin');
@@ -24,7 +24,7 @@
             if($scope.users[i].username == $scope.username && $scope.users[i].password == $scope.password)
               {
                 $state.go('user');
-                console.log(i);
+                //console.log(i);
                 flag = true;
               }
         }

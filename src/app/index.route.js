@@ -12,7 +12,7 @@
         url: '/home',
         templateUrl: 'app/partials/main.html',
       })
-      .state('home.login', {
+      .state('login', {
         url: '/login',
         controller: 'LoginController',
         templateUrl: 'app/partials/login.html'
@@ -43,7 +43,7 @@
         template:'<div><acme-navbar></acme-navbar><h1>About Page</h1></div>'
       });
 
-    $urlRouterProvider.otherwise('/home/login');
+    $urlRouterProvider.otherwise('/login');
   }
 
 })();
